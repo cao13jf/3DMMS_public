@@ -1,0 +1,1 @@
+Partial results for storage. Programe can be run locally and generate all segmentation results.
