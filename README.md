@@ -1,6 +1,6 @@
 This program implements the 3DMMS algorithm proposed in 3DMMS: from nucleus to membrane morphological segmentation. 
 
-![segmentation](example_pictures/segmentation_stack.gif "segmentation result")
+![segmentation00](example_pictures/segmentation_results.gif)
 
 ![3Dsegmentation](example_pictures/3DSegmentation_half.gif "segmentation result in 3D")
 
