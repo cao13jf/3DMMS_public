@@ -25,7 +25,7 @@ This program is developed in Matlab 2017b. For computational efficiency, paralle
   
 ## **Parameters settting**
 
-If you want to analyze your own dataset, you might need to change parameters according to your own dataset. `DTWatershed` function includs all the parameters you need to tune. They are listed as following:
+If you want to analyze your own dataset, you might need to change parameters according to your own dataset. `DTWatershed.m` function includs all the parameters you need to tune. They are listed as following:
 
 | **Parameter name** | **Meaning**                           |
 |---------------:|:------------------------------------------|
@@ -36,9 +36,9 @@ If you want to analyze your own dataset, you might need to change parameters acc
 |  xy_resolution | resolution on each slice                  |
 |   z_resolution | distance of each slices                   |
 
-## **Example results**
+## **Segmentation**
   
-Example results are saved in `.\results\resultsWithMerge\merged_membrane`, `.\results_analysis\interCellFeatures` and `.\results_analysis\singleCellFeatures`. The first one shows the segmentation results on every time points(max t=95); the second one includes the external features between neighboring cells as [tree](http://tinevez.github.io/matlab-tree/) structure; the last file includes the internal features on each single cell, which is also save as [tree](http://tinevez.github.io/matlab-tree/) structue.
+Run `DWatershed.m` to implement 3DMMS segmentation on the dataset. Example results are saved in `.\results\resultsWithMerge\merged_membrane`, `.\results_analysis\interCellFeatures` and `.\results_analysis\singleCellFeatures`. The first one shows the segmentation results on every time points(max t=95); the second one includes the external features between neighboring cells as [tree](http://tinevez.github.io/matlab-tree/) structure; the last file includes the internal features on each single cell, which is also save as [tree](http://tinevez.github.io/matlab-tree/) structue.
   
 `.\example_pictures` file also includes the segmentation result at t=46 for your quick reference. 
   
