@@ -14,12 +14,12 @@ This program implements the 3DMMS algorithm proposed in 3DMMS: from nucleus to m
 |E-mail|jfcao3-c@my.cityu.edu.hk
 
 *****
-## Usage
-### **Platform dependency** 
+* Usage
+** **Platform dependency** 
 
   This program is developed in Matlab 2017b. For computational efficiency, parallel computing is adopted in 3DMMS.
 
-### **Data preparation**
+** **Data preparation**
   
   All dataSets are saved in `.\data` file. `.\data\170704plc1p2\aceNuc` includes the original file got from [AceTree](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1501046/); `.\data\170704plc1p2\membrane` includes embryonic membrane stack images 
   as `*.mat` at different time points. *170704plc1p2* corresponds the dataset name. If you want to import other data, you can use
@@ -27,7 +27,7 @@ This program implements the 3DMMS algorithm proposed in 3DMMS: from nucleus to m
   
   Remember to run `startup.m` first to add all files into the working space.
   
-### **Parameters settting**
+** **Parameters settting**
 
 	If you want to analyze your own dataset, you might need to change parameters
 	according to your own dataset. `DTWatershed` function includs all the parameters you need to tune. They are
@@ -42,7 +42,7 @@ This program implements the 3DMMS algorithm proposed in 3DMMS: from nucleus to m
 	|  xy_resolution | The resolution on each slice                  |
 	|   z_resolution | The distance of each slices                   |
 
-### **Example results**
+** **Example results**
   
   Example results are saved in `.\results\resultsWithMerge\merged_membrane`, `.\results_analysis\interCellFeatures` and `.\results_analysis\singleCellFeatures`. The first one shows the segmentation results on every time points(max t=95); the second
   one includes the external features between neighboring cells as [@tree](http://tinevez.github.io/matlab-tree/) structure; the 
@@ -51,7 +51,7 @@ This program implements the 3DMMS algorithm proposed in 3DMMS: from nucleus to m
   
   '.\example_pictures' file also includes the segmentation result at t=46 for your quick reference. 
   
-### **Note**
+** **Note**
 
   1. [ImageJ](https://fiji.sc/) can be used to view `*.tif` files.
   
