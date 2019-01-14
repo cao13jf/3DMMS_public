@@ -8,7 +8,7 @@ function [ filteredMemb ] = regionFilter( biMemb )
 %OUTPUT
 % filteredMemb:     filtered membrane image based on EDT and PCA
 
-biMemb = biMemb > 1;
+biMemb = biMemb > 0;
 [sx, sy, sz] = size(biMemb);
 CC = seedCCA(biMemb);
 except0 = CC;except0(CC == 0) = [];

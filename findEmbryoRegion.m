@@ -41,7 +41,7 @@ mask = reshape(mask, [r, c*zNum]);
 imgReshape = reshape(sumMembDenoise, [r, c*zNum]);
 
 %% implement active contour. Give smaller smooth parameter
-smooth=0.09;%0.0003
+smooth=0.30;%0.09
 contBias=0.01;
 repeatTime = 90;
 mask=activecontour(imgReshape, mask,repeatTime,'Chan-Vese' ,'SmoothFactor',smooth, 'ContractionBias',contBias);

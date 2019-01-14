@@ -21,7 +21,6 @@ load_file = fullfile('.\getNucFromacetree\transformed', data_name, 'nucInformati
 load(load_file, 'nameTree', 'labelTree', 'nucExistTree');
 %% set criterion for determining whether cells are dividing
 tensityThreshold = 80;      %mmight be different for different time point
-areaThreshold = 20;
 
 %% get pairs of cells from the same parent
 divReMatrix = triu(ones(size(divReMatrix))) .* divReMatrix;
