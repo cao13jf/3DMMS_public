@@ -48,8 +48,13 @@ for ID = 1:nNodes
             nL = 3-length(num2str(timePoint));
             load_file = fullfile( save_folder,strcat('T', repmat('0', 1,nL),num2str(timePoint), '_membSeg.mat'));
             load(load_file, 'membSeg');
-            membSeg(membSeg == oneLabel) = parentLabel;
-            membSeg(membSeg == anotherLabel) = parentLabel;
+            mask = zeros(size(membSeg));
+            mask(membSeg==oneLabel) = 1;
+            mask(membSeg==anotherLabel) = 1;
+            membSeg(mask~=0) = 0;
+            SE = strel('sphere', 2);
+            mask = imclose(mask, SE);
+            membSeg(mask~=0) = parentLabel;
                 %change the time points where one cell exists
             tem1 = cellExistTree.get(childrenID(1));
             tem1(tem1 == timePoint) = [];
@@ -67,6 +72,7 @@ for ID = 1:nNodes
     waitbar(ID/nNodes, f)
     %transform all stacks which doesn't exist in the destination
 end
+close(f)
 
 %{
 for timePoint = 1 : maxiTime
