@@ -10,6 +10,7 @@ function repairedMemb = repairTopSurfaceOfMemb(membStack,nucleus, filteredMemb)
 % repairedMemb:   membrane stack with repaired top and down surface.
 
 %% initial variables
+filteredMemb = filteredMemb > 0;
 [SR, SC, SZ] = size(membStack);
 intensityThreshold = 20;
 sizeThreshold = 60;

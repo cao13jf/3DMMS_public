@@ -16,13 +16,13 @@ all_ccLabels = unique(except0(:));
 
 %perform EDT on the largest connected component
 max_cc = mode(except0(:));
-toEDT = false(sx, sy, sz);
-toEDT(CC == max_cc) = true;
+toEDT = zeros(sx, sy, sz);
+toEDT(CC == max_cc) = 1;
 DL = bwdist(toEDT);
 filteredMemb = toEDT;
 
 %analyze smaller regions
-confidence_thre = 0.1; %this ratio may needs change later
+confidence_thre = 0.05; %this ratio may needs change later
 all_confidences = []; %for display
 for ccLabel = all_ccLabels'
     if ccLabel == max_cc
@@ -32,7 +32,7 @@ for ccLabel = all_ccLabels'
     %find the centers. iCenters =  regionprops3(CC == ccLabel,
     %'Centroid'); cannot be used in 2017a
     iCenters =  find(CC == ccLabel);
-    if numel(iCenters) < 10
+    if numel(iCenters) < 50
         continue;
     end
     [ix, iy, iz] = ind2sub([sx, sy, sz], iCenters);
@@ -49,9 +49,10 @@ for ccLabel = all_ccLabels'
     keep_confidence = explained(2)/sum(explained);
     all_confidences = [all_confidences,keep_confidence];
     if keep_confidence > confidence_thre
-        filteredMemb(CC == ccLabel) = keep_confidence;
+        filteredMemb(CC == ccLabel) = 255;  %  For showing revised region
+        continue;
     end
 end
-filteredMemb = (filteredMemb >0) * 1; %change logical value to double
+filteredMemb = filteredMemb * 1; %change logical value to double
 %saveTif(uint8(filteredMemb*200),'./results/more_des/tem.tif');
 
