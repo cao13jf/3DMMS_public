@@ -29,7 +29,7 @@ load(load_file, 'labelTree');
 
 %% obtain initial segmentation without fusion of dividing cells.
 hbar = parfor_progressbar(max_Time,'Computing...');
-parfor timePoint = 1:max_Time%1:max_Time
+for timePoint = 1:max_Time
     
     %% extract file name
     nL = 3-length(num2str(timePoint));
