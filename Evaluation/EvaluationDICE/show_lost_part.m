@@ -21,14 +21,14 @@ memb = memb.img;
 
 
 %%  Find lost part
-NoRepair_to_GT = GT ~= NoRepair_DMMS;
-background = GT == 0;
+NoRepair_to_GT = DMMS ~= NoRepair_DMMS;
+background = DMMS == 0;
 
-Lost_part_label = GT;
-Lost_part_label(~NoRepair_to_GT) = 1;
+Lost_part_label = DMMS;
+%Lost_part_label(~NoRepair_to_GT) = 1;
+Lost_part_label(NoRepair_to_GT) = DMMS(NoRepair_to_GT) + 100;
 Lost_part_label(background) = 0;
-Lost_part_label(NoRepair_to_GT) = GT(NoRepair_to_GT);
-Lost_part_label(memb~=0) = 0;
+%Lost_part_label(memb~=0) = 0;
 
 save_file = 'LostParts.nii';
 seg_nii = make_nii(Lost_part_label, [1,1,1],[0,0,0], 4);  %512---uint16
