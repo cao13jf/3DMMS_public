@@ -63,7 +63,7 @@ end
 
 %%  Save dice coefficients
 save('.\Evaluation\DICES.mat', 'DICES');
-save('.\Evaluation\DICES_thick.mat', 'DICES_thick');
+% save('.\Evaluation\DICES_thick.mat', 'DICES_thick');
 
 
 %%  Plot results with bars for comparison.
@@ -85,7 +85,7 @@ xlabel('Time point')
 ylabel('Dice ratio')
 ylim([0,1.1])
 
-
+% 
 figure(2)
 time_point = categorical({'24', '34', '44', '54', '64', '74'});
 h1 = bar(time_point, DICES_thick, 'group');

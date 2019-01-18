@@ -26,6 +26,7 @@ for time = time_point
     NoRepair_DMMS = NoRepair_DMMS.img;
     
     %%  Calculate dice ratio with thin membrane
+    GT = get_boundary_cells(GT);
     DMMS_ratio = calculate_dice(GT, DMMS);
     NoRepair_ratio = calculate_dice(GT, NoRepair_DMMS);
     
@@ -41,14 +42,18 @@ save('.\Evaluation\EvaluationOutermost\DICE_Outermost.mat', 'DICES');
 %%  Plot results with bars for comparison.
 figure(1)
 time_point = categorical({'24', '34', '44', '54', '64', '74'});
-h1 = bar(time_point, DICES, 'group');
+h1 = bar(time_point, DICES);
+h(2).color = 'm';
+h(2).LineStyle = '--';
 a = (1:size(DICES,1)).';
 x = [a-0.2 a+0.2 a+0.25];
 for k=1:size(DICES,1)
     for m = 1:size(DICES,2)
-        text(x(k,m),DICES(k,m),num2str(floor(DICES(k,m)*100)/100,'%0.2f'),...
+        t = text(x(k,m),DICES(k,m),num2str(floor(DICES(k,m)*100)/100,'%0.2f'),...
             'HorizontalAlignment','center',...
-            'VerticalAlignment','bottom')
+            'VerticalAlignment','bottom');
+        t.FontSize = 10;
+        t.FontWeight = 'bold';
     end
 end
 title('Effect of cavity repair on 3DMMS');
