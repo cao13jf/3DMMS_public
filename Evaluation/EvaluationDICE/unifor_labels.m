@@ -1,7 +1,7 @@
 clc;
 
 % load ground truth
-time_points = 54;%[24,34,44,54,64,75];
+time_points = [24,34,44,54,64,75];
 for time_point = time_points
     str_time = num2str(time_point);
     GT = load_nii(strcat('C:\Users\bcc\Desktop\BMCevaluation\PartialGroundTruth\GroundTruth\ZHAO1\MatlabProcessed\membt0',str_time,'sr.nii'));
