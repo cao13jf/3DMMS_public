@@ -1,6 +1,6 @@
 3DMMS
 =================
-This program implements the 3DMMS algorithm proposed in *3DMMS: from nucleus to 3D membrane morphological segmentation*. 
+This program implements the 3DMMS algorithm proposed in *3DMMS: Robust 3D Membrane Morphological Segmentation ofC.elegansEmbryo*. 
 
 ![segmentation00](example_pictures/segmentation_results.gif "segmentation results comparison")
 
@@ -50,7 +50,9 @@ Run `DWatershed.m` to implement 3DMMS segmentation on the dataset. Example resul
 
 2. 3DMMS aims to segment cells in 3D, where cells closely contact to each other. Raw membrane stack images can come from *C. elegans*,  *Arabidopsis thaliana* and *Drosophila*, but not individual cells, like cells in the blood. 
 
-## **Correspondence**
+# **Correspondence**
 Please contact to jfcao3-c@my.cityu.edu.hk
+
+
   
   
