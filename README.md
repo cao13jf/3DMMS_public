@@ -1,6 +1,6 @@
 3DMMS
 =================
-This program implements the 3DMMS algorithm proposed in *3DMMS: Robust 3D Membrane Morphological Segmentation ofC.elegansEmbryo*. 
+This program implements the 3DMMS algorithm proposed in *3DMMS: Robust 3D Membrane Morphological Segmentation of C.elegans Embryo*. 
 
 ![segmentation00](example_pictures/segmentation_results.gif "segmentation results comparison")
 
@@ -19,7 +19,7 @@ This program implements the 3DMMS algorithm proposed in *3DMMS: Robust 3D Membra
 This program is developed in Matlab 2017b. For computational efficiency, parallel computing is adopted in 3DMMS.
 * **Data preparation**
   
-All datasets are saved in `.\data` file. `.\data\170704plc1p2\aceNuc` includes the original file got from [AceTree](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1501046/); Download raw image data from [here](https://portland-my.sharepoint.com/:u:/g/personal/jfcao3-c_ad_cityu_edu_hk/EXXt_P9gkkBMsPLqPdrxPH8BFalj1zh3XLLxu5VJaQHPQg?e=H4fe96), and put them into `.\data\170704plc1p2\membrane`. *170704plc1p2* corresponds to the dataset name. If you want to import other data, you can use `originDataTransform.m` to assemble slices into stack images.
+All datasets are saved in `.\data` file. `.\data\170704plc1p2\aceNuc` includes the original file got from [AceTree](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1501046/); Download raw image data from [here](https://figshare.com/s/d932c564d5cdd7186679), and put them into `.\data\170704plc1p2\membrane`. *170704plc1p2* corresponds to the dataset name. If you want to import other data, you can use `originDataTransform.m` to assemble slices into stack images.
   
   Remember to run `startup.m` first to add all files into the working space.
   
