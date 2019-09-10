@@ -1,5 +1,7 @@
 3DMMS
 =================
+*This repository is deprecated, pls refer to https://github.com/cao13jf/3DMMS_new*
+
 This program implements the 3DMMS algorithm proposed in *3DMMS: Robust 3D Membrane Morphological Segmentation of C.elegans Embryo*. 
 
 ![segmentation00](example_pictures/segmentation_results.gif "segmentation results comparison")
