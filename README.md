@@ -53,7 +53,7 @@ Run `DWatershed.m` to implement 3DMMS segmentation on the dataset. Example resul
 2. 3DMMS aims to segment cells in 3D, where cells closely contact to each other. Raw membrane stack images can come from *C. elegans*,  *Arabidopsis thaliana* and *Drosophila*, but not individual cells, like cells in the blood. 
 
 ## **Correspondence**
-Please contact to jfcao3-c@my.cityu.edu.hk
+Please contact jfcao3-c@my.cityu.edu.hk
 
 
   
